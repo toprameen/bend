@@ -5669,7 +5669,6 @@ static void* io_help(void* arg) {
 }
 
 static Term io_work(IoWork* w, IoCall call, IoPack pack) {
-  io_sync();
   w->call  = call;
   w->pack  = pack;
   io_busy += 1;

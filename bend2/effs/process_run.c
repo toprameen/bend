@@ -367,6 +367,7 @@ Term process_run_run(Env e, Term* f, IoWork* w) {
     p->code = EINVAL;
   }
   w->data = (char*)p;
+  io_sync();
   return p->code != 0 ? process_pack(e, w)
     : io_work(w, process_call, process_pack);
 }
